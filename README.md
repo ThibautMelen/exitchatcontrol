@@ -16,7 +16,7 @@ Et pour comprendre contre quoi on se protège :
   information, biométrie), 35 faits filtrables par région/front, deep-linkables,
   avec **LE FIL** (téléscripteur des dernières entrées) et la contre-vague
   (dont [Tapestry](https://thealliance.ai/projects/tapestry), l'IA fédérée) ;
-- l'**annuaire open source** — 68 projets en 14 catégories, licences vérifiées ;
+- l'**annuaire open source** — 70+ projets en 14 catégories, licences vérifiées ;
 - les **initiatives alliées** et une **checklist de migration** (progression
   stockée uniquement dans votre navigateur).
 

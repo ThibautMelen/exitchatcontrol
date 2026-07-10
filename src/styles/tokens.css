@@ -890,3 +890,31 @@ html { scrollbar-width: thin; scrollbar-color: var(--rule-strong) var(--desk-bg)
 
 /* the details chevron of tool cards is also a target — acknowledge focus */
 .tg-install > summary:focus-visible { color: var(--accent); }
+
+/* ═══ directory search + details micro-open ═════════════════════════════════ */
+.dir-search {
+  display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap;
+  margin: 1.2rem 0 0.4rem; padding: 0.7rem 0.9rem;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius);
+  position: sticky; top: calc(var(--desk) + var(--topbar-h) + 0.4rem); z-index: 10;
+}
+.dir-search label {
+  font-family: var(--mono); font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
+}
+.dir-search input {
+  flex: 1; min-width: 10rem; font: inherit; font-size: 0.95rem;
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--rule-strong); border-radius: var(--radius);
+  padding: 0.45rem 0.7rem; min-height: 24px;
+}
+.dir-search input:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 1px; }
+.dir-count { font-family: var(--mono); font-size: 0.78rem; font-weight: 700; color: var(--text-dim); font-variant-numeric: tabular-nums; }
+@media (pointer: coarse) { .dir-search input { min-height: 44px; } }
+@media print { .dir-search { display: none; } }
+
+/* opening a tool card's install steps: content rises in (transform/opacity) */
+@media (prefers-reduced-motion: no-preference) {
+  .tg-install[open] .tg-steps { animation: rise-in 0.22s ease-out both; }
+  .bb-card[open] .bb-body { animation: rise-in 0.22s ease-out both; }
+}

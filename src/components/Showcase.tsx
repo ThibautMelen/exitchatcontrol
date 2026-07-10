@@ -3,6 +3,7 @@ import { T } from '../lib/i18n'
 import { BRAND_ICONS } from '../icons.generated'
 import { inkFor } from '../lib/ink'
 import { SHELF, MARQUEE } from '../content/showcase'
+import { DIRECTORY } from '../content/directory'
 
 /* ═══ The survival-kit showcase ══════════════════════════════════════════════
    Product-first band right under the breaking banner: the ten hero tools as a
@@ -87,8 +88,8 @@ export function Showcase() {
           </button>
           <span>
             <T
-              fr={<>+ 68 outils libres, licences vérifiées, dans <a href="#ecosysteme">l'annuaire complet</a></>}
-              en={<>+ 68 free tools, licenses verified, in <a href="#ecosysteme">the full directory</a></>}
+              fr={<>+ {DIRECTORY.length} outils libres, licences vérifiées, dans <a href="#ecosysteme">l'annuaire complet</a></>}
+              en={<>+ {DIRECTORY.length} free tools, licenses verified, in <a href="#ecosysteme">the full directory</a></>}
             />
           </span>
         </p>

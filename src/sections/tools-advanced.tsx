@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { T } from '../lib/i18n'
 import { Box, Lvl, PartHead } from '../components/ui'
 import { DIRECTORY, DIR_CATEGORIES } from '../content/directory'
@@ -601,7 +602,15 @@ export function Opsec() {
   )
 }
 
+function dirMatch(e: (typeof DIRECTORY)[number], q: string): boolean {
+  const hay = `${e.name} ${e.license} ${e.fr} ${e.en}`.toLowerCase()
+  return q.split(/\s+/).every((w) => hay.includes(w))
+}
+
 export function Ecosystem() {
+  const [query, setQuery] = useState('')
+  const q = query.trim().toLowerCase()
+  const matches = q ? DIRECTORY.filter((e) => dirMatch(e, q)).length : DIRECTORY.length
   return (
     <section id="ecosysteme">
       <PartHead
@@ -615,8 +624,35 @@ export function Ecosystem() {
           />
         }
       />
+      <div className="dir-search">
+        <label htmlFor="dir-q">
+          <T fr="Rechercher un outil" en="Search a tool" nl="Zoek een tool" />
+        </label>
+        <input
+          id="dir-q"
+          type="search"
+          value={query}
+          onChange={(ev) => setQuery(ev.target.value)}
+          placeholder="Signal, AGPL, VPN…"
+          autoComplete="off"
+          spellCheck={false}
+        />
+        <span className="dir-count" aria-live="polite">
+          {matches}/{DIRECTORY.length}
+        </span>
+      </div>
+      {q && matches === 0 ? (
+        <div className="box">
+          <p>
+            <T
+              fr={<>Aucun outil ne correspond. <button type="button" className="btn" onClick={() => setQuery('')}>Effacer la recherche</button></>}
+              en={<>No tool matches. <button type="button" className="btn" onClick={() => setQuery('')}>Clear the search</button></>}
+            />
+          </p>
+        </div>
+      ) : null}
       {DIR_CATEGORIES.map((cat) => {
-        const entries = DIRECTORY.filter((e) => e.cat === cat.key)
+        const entries = DIRECTORY.filter((e) => e.cat === cat.key && (!q || dirMatch(e, q)))
         if (entries.length === 0) return null
         return (
           <div key={cat.key}>

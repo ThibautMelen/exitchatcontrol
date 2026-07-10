@@ -89,6 +89,24 @@ export function runE2E() {
   ok('click-bbf-all', click('.bbf-all'))
   ok('bbf-cleared', bb?.getAttribute('data-bbf') === null)
 
+  // 5b · directory search narrows to Nika and restores on clear
+  const dirInput = document.getElementById('dir-q') as HTMLInputElement | null
+  ok('dir-search-present', !!dirInput)
+  if (dirInput) {
+    const initialCount = document.querySelector('.dir-count')?.textContent ?? ''
+    const setVal = (v: string) => {
+      const proto = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')
+      proto?.set?.call(dirInput, v)
+      flushSync(() => dirInput.dispatchEvent(new Event('input', { bubbles: true })))
+    }
+    setVal('nika')
+    const count = document.querySelector('.dir-count')?.textContent ?? ''
+    ok('dir-search-narrows', count.startsWith('1/'), count)
+    ok('dir-search-keeps-nika', !!document.querySelector('#ecosysteme .dir-featured'))
+    setVal('')
+    ok('dir-search-restores', (document.querySelector('.dir-count')?.textContent ?? '') === initialCount, `${document.querySelector('.dir-count')?.textContent} vs ${initialCount}`)
+  }
+
   // 6 · marquee pause toggle (WCAG 2.2.2 — moving content must be pausable)
   const showcase = document.getElementById('trousse')
   ok('click-mq-pause', click('.mq-toggle'))

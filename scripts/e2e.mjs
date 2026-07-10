@@ -73,6 +73,7 @@ check('agentic-AI pointer in AI section', html.includes('dir-ia-locale-agentique
   check('arsenal marquee + pause control prerendered', html.includes('mq-track') && html.includes('mq-toggle'))
   check('showcase in TOC', html.includes('#trousse'))
 check('skip-link targets first content', html.includes('class="skip-link" href="#trousse"'))
+check('directory search prerendered', html.includes('id="dir-q"') && html.includes('dir-count'))
 check('showcase has an accessible name', html.includes('aria-labelledby="trousse-title"') && html.includes('id="trousse-title"'))
 }
 check('observatory events prerendered', (html.match(/bb-item/g) ?? []).length >= 30, `${(html.match(/bb-item/g) ?? []).length}`)

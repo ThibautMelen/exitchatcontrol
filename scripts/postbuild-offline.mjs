@@ -179,6 +179,29 @@ const vanilla = `
     })
   })
   syncMeter()
+  var dirQ = document.getElementById('dir-q')
+  if (dirQ) {
+    var allCards = [].slice.call(document.querySelectorAll('#ecosysteme .ally'))
+    var count = document.querySelector('.dir-count')
+    dirQ.addEventListener('input', function () {
+      var q = dirQ.value.trim().toLowerCase()
+      var words = q ? q.split(/\s+/) : []
+      var shown = 0
+      allCards.forEach(function (card) {
+        var hay = (card.textContent || '').toLowerCase()
+        var hit = words.every(function (w) { return hay.indexOf(w) !== -1 })
+        card.style.display = hit ? '' : 'none'
+        if (hit) shown++
+      })
+      if (count) count.textContent = shown + '/' + allCards.length
+      document.querySelectorAll('#ecosysteme h3[id^="dir-"]').forEach(function (h) {
+        var grid = h.nextElementSibling
+        var any = grid && grid.querySelector('.ally:not([style*="display: none"])')
+        h.style.display = any ? '' : 'none'
+        if (grid) grid.style.display = any ? '' : 'none'
+      })
+    })
+  }
   addEventListener('beforeprint', function () {
     document.querySelectorAll('details:not([open])').forEach(function (d) {
       d.setAttribute('data-print-opened', '1'); d.open = true
