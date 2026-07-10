@@ -11,8 +11,7 @@ export function Footer() {
             <a href="https://www.privacyguides.org" target="_blank" rel="noopener noreferrer">Privacy Guides</a><br />
             <a href="https://ssd.eff.org" target="_blank" rel="noopener noreferrer">EFF · Surveillance Self-Defense</a><br />
             <a href="https://freedom.press" target="_blank" rel="noopener noreferrer">Freedom of the Press Foundation</a><br />
-            <a href="https://fightchatcontrol.eu" target="_blank" rel="noopener noreferrer">Fight Chat Control</a><br />
-            <a href="https://vpn-gratuit.fr/" target="_blank" rel="noopener"><T fr="vpn-gratuit.fr · comparatif VPN gratuits" en="vpn-gratuit.fr · free-VPN comparison (FR)" /></a>
+            <a href="https://fightchatcontrol.eu" target="_blank" rel="noopener noreferrer">Fight Chat Control</a>
           </p>
         </div>
         <div>

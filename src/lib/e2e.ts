@@ -102,7 +102,7 @@ export function runE2E() {
     setVal('nika')
     const count = document.querySelector('.dir-count')?.textContent ?? ''
     ok('dir-search-narrows', count.startsWith('1/'), count)
-    ok('dir-search-keeps-nika', !!document.querySelector('#ecosysteme .dir-featured'))
+    ok('dir-search-keeps-nika', !!Array.from(document.querySelectorAll('#ecosysteme .ally-name')).find((n) => (n.textContent ?? '').includes('Nika')))
     setVal('')
     ok('dir-search-restores', (document.querySelector('.dir-count')?.textContent ?? '') === initialCount, `${document.querySelector('.dir-count')?.textContent} vs ${initialCount}`)
   }

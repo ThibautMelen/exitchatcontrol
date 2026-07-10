@@ -716,23 +716,6 @@ footer small { color: var(--text-dim); font-family: var(--mono); font-size: 0.72
   .tg:hover, .profile:hover, .eco-cat:hover { border-color: var(--rule-strong); }
 }
 
-/* ⑥ guide's pick — the ONE expanded card (featured directory entry) */
-.dir-featured {
-  grid-column: 1 / -1;
-  border: 1px solid var(--accent);
-  border-left-width: 4px;
-  background:
-    radial-gradient(130% 120% at 100% 0%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 55%),
-    var(--surface);
-}
-.dir-featured .ally-name { font-size: 1.05rem; }
-.dir-featured .ally-role { font-size: 0.93rem; margin-top: 0.4rem; }
-.dir-pick {
-  display: inline-block; font-family: var(--mono); font-size: 0.6rem; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-accent);
-  background: var(--accent); border-radius: 2px; padding: 0.18rem 0.5rem; margin-bottom: 0.5rem;
-}
-.dir-featured:hover { border-color: var(--accent-bright); }
 
 /* ═══ survival-kit showcase · product shelf + arsenal marquee ════════════════
    Full-bleed band under the breaking banner. Shelf: snap-scroll product cards

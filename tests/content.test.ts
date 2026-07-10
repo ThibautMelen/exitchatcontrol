@@ -126,7 +126,10 @@ describe('survival-kit showcase', () => {
       expect(s.en.length).toBeGreaterThan(8)
       if (s.slug) expect(BRAND_ICONS[s.slug], `${s.name}: icon ${s.slug}`).toBeDefined()
     }
-    expect(SHELF.some((s) => s.name === 'Nika')).toBe(true)
+    // policy (see CONTRIBUTING · disclosure & link policy): no editorial
+    // prominence for affiliated projects — Nika lives in the directory with
+    // its disclosure, never on the hero shelf
+    expect(SHELF.some((s) => s.name === 'Nika')).toBe(false)
   })
 
   it('marquee: every slug has an embedded icon, no duplicates', () => {

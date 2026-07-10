@@ -23,7 +23,7 @@ export const SHELF: ShelfEntry[] = [
   { slug: 'grapheneos', tile: 'Gr', brand: '#1f8a70', name: 'GrapheneOS', anchor: '#t-grapheneos', fr: 'Reprendre le téléphone lui-même', en: 'Take back the phone itself' },
   { slug: 'linux', tile: '🐧', brand: '#2b2b2b', name: 'Linux', anchor: '#t-linux', fr: 'Un ordinateur qui ne rapporte rien sur vous', en: 'A computer that reports on no one' },
   { slug: 'ollama', tile: 'Ai', brand: '#111111', name: 'Ollama', anchor: '#t-localai', fr: "L'IA qui ne quitte pas votre machine", en: 'AI that never leaves your machine' },
-  { tile: 'N', brand: '#101828', name: 'Nika', anchor: '#dir-ia-locale-agentique', fr: 'Des agents IA qui montrent leur plan avant d’agir', en: 'AI agents that show their plan before acting' },
+  { slug: 'tails', tile: 'Ta', brand: '#56347c', name: 'Tails', anchor: '#t-tails', fr: 'L’ordinateur qui oublie tout en s’éteignant', en: 'The computer that forgets everything on shutdown' },
   { slug: 'mastodon', tile: 'Ma', brand: '#6364ff', name: 'Mastodon', anchor: '#t-mastodon', fr: 'Un réseau social sans propriétaire', en: 'A social network nobody owns' },
 ]
 
