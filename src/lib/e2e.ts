@@ -29,6 +29,16 @@ export function runE2E() {
   ok('title-en', document.title.includes('ungovernable'), document.title)
   ok('aria-pressed-en', document.querySelector('.lang-en')?.getAttribute('aria-pressed') === 'true')
 
+  // 1b · Dutch toggle: attribute flips, thomasboom's hero shows, unported
+  // leaves fall back to English (nl span carries the EN text)
+  ok('click-nl', click('.lang-nl'))
+  ok('lang-attr-nl', root.getAttribute('data-lang') === 'nl', root.getAttribute('data-lang') ?? 'null')
+  ok('title-nl', document.title.includes('onbestuurbaar'), document.title)
+  const heroNl = document.querySelector('.hero h1 [data-l="nl"]')
+  ok('hero-nl-visible', !!heroNl && getComputedStyle(heroNl).display !== 'none' && /Onbestuurbaar/.test(heroNl.textContent ?? ''))
+  const fallback = document.querySelector('#menace .part-head h2 [data-l="nl"]')
+  ok('nl-fallback-en', !!fallback && getComputedStyle(fallback).display !== 'none' && (fallback.textContent ?? '').length > 3)
+
   // 2 · profile filter hides non-matching tool cards (computed style, not class)
   ok('click-filter-a', click('.fb-a'))
   ok('filter-attr', root.getAttribute('data-filter') === 'a')
@@ -60,10 +70,10 @@ export function runE2E() {
   // runs after this battery, and a leaked theme flip made axe read mixed
   // token sets (light foreground on dark background — real debugging story)
   const before = root.getAttribute('data-theme')
-  ok('click-theme', click('.controls .btn:not(.lang-fr):not(.lang-en)'))
+  ok('click-theme', click('.controls .btn:not(.lang-fr):not(.lang-en):not(.lang-nl)'))
   const after = root.getAttribute('data-theme')
   ok('theme-flipped', after !== null && after !== before, `${before} -> ${after}`)
-  click('.controls .btn:not(.lang-fr):not(.lang-en)')
+  click('.controls .btn:not(.lang-fr):not(.lang-en):not(.lang-nl)')
   ok('theme-restored', root.getAttribute('data-theme') === (before ?? root.getAttribute('data-theme')), `${root.getAttribute('data-theme')}`)
 
   // 5 · observatory filter drives the SECTION attribute (scoped, not :root —

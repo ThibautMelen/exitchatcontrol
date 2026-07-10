@@ -17,25 +17,26 @@ export function Hero() {
           <span>1993→2026</span>
         </p>
         <span className="stamp">
-          <T fr="Surveillance de masse · UE · 2026" en="Mass surveillance · EU · 2026" />
+          <T fr="Surveillance de masse · UE · 2026" en="Mass surveillance · EU · 2026" nl="Massasurveillance · EU · 2026" />
         </span>
         <div className="eyebrow">
-          <T fr="Manuel de souveraineté numérique" en="A digital sovereignty field manual" />
+          <T fr="Manuel de souveraineté numérique" en="A digital sovereignty field manual" nl="Een veldgids voor digitale soevereiniteit" />
         </div>
         <h1>
-          <T fr={<>Devenir<br />Ingouvernable</>} en={<>Becoming<br />Ungovernable</>} />
+          <T fr={<>Devenir<br />Ingouvernable</>} en={<>Becoming<br />Ungovernable</>} nl={<>Word<br />Onbestuurbaar</>} />
           <span className="cursor" aria-hidden="true">_</span>
         </h1>
         <p className="lede">
           <T
             fr="Chat Control veut scanner vos messages privés. Voici comment reprendre le contrôle de vos conversations, de vos données et de vos outils, étape par étape, du débutant au lanceur d'alerte."
             en="Chat Control wants to scan your private messages. Here is how to take back control of your conversations, your data and your tools, step by step, from beginner to whistleblower."
+            nl="Chat Control wil uw privéberichten scannen. Hier leest u hoe u stap voor stap weer controle krijgt over uw gesprekken, uw gegevens en uw hulpmiddelen, van beginner tot klokkenluider."
           />
         </p>
         <div className="hero-meta">
-          <span className="tag">🟢 <T fr="Citoyen" en="Citizen" /></span>
-          <span className="tag">🟡 <T fr="Compte pseudonyme" en="Pseudonymous account" /></span>
-          <span className="tag">🔴 <T fr="Lanceur d'alerte" en="Whistleblower" /></span>
+          <span className="tag">🟢 <T fr="Citoyen" en="Citizen" nl="Burger" /></span>
+          <span className="tag">🟡 <T fr="Compte pseudonyme" en="Pseudonymous account" nl="Pseudoniem account" /></span>
+          <span className="tag">🔴 <T fr="Lanceur d'alerte" en="Whistleblower" nl="Klokkenluider" /></span>
         </div>
       </div>
     </header>
@@ -49,7 +50,7 @@ export function StatusBanner() {
         <span className="dot" aria-hidden="true"></span>
         <div>
           <b>
-            <T fr="Dernière minute : 9 juillet 2026" en="Breaking: 9 July 2026" />
+            <T fr="Dernière minute : 9 juillet 2026" en="Breaking: 9 July 2026" nl="Laatste nieuws: 9 juli 2026" />
           </b>
           <p>
             <T
@@ -119,7 +120,7 @@ export function Toc() {
       <details className="toc" open>
         <summary>
           <h2>
-            <T fr="Sommaire" en="Contents" />
+            <T fr="Sommaire" en="Contents" nl="Inhoudsopgave" />
           </h2>
           <span className="toc-chevron" aria-hidden="true">▾</span>
         </summary>

@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react'
 
-export type Lang = 'fr' | 'en'
+export type Lang = 'fr' | 'en' | 'nl'
 export type Filter = 'b' | 'i' | 'a' | null
 
 /* Tiny external store bridging the <html> attributes (owned by the boot
@@ -21,12 +21,14 @@ function subscribe(cb: () => void) {
 }
 
 export function currentLang(): Lang {
-  return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr'
+  const v = document.documentElement.getAttribute('data-lang')
+  return v === 'en' || v === 'nl' ? v : 'fr'
 }
 
 const TITLES: Record<Lang, string> = {
   fr: 'Exit Chat Control · Devenir ingouvernable',
   en: 'Exit Chat Control · Becoming ungovernable',
+  nl: 'Exit Chat Control · Word onbestuurbaar',
 }
 
 export function setLang(l: Lang) {

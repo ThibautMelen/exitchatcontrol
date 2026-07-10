@@ -60,17 +60,21 @@ const vanilla = `
   }
   on('.lang-fr', function () { setLang('fr') })
   on('.lang-en', function () { setLang('en') })
+  on('.lang-nl', function () { setLang('nl') })
   function setLang(l) {
     root.setAttribute('data-lang', l)
     root.setAttribute('lang', l)
     document.title = l === 'en'
       ? 'Exit Chat Control · Becoming ungovernable'
-      : 'Exit Chat Control · Devenir ingouvernable'
+      : l === 'nl'
+        ? 'Exit Chat Control · Word onbestuurbaar'
+        : 'Exit Chat Control · Devenir ingouvernable'
     pressed('.lang-fr', function () { return l === 'fr' })
     pressed('.lang-en', function () { return l === 'en' })
+    pressed('.lang-nl', function () { return l === 'nl' })
     try { localStorage.setItem('lang', l) } catch (e) {}
   }
-  on('.controls .btn:not(.lang-fr):not(.lang-en)', function () {
+  on('.controls .btn:not(.lang-fr):not(.lang-en):not(.lang-nl)', function () {
     var cur = root.getAttribute('data-theme')
     if (!cur) cur = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
     var next = cur === 'dark' ? 'light' : 'dark'

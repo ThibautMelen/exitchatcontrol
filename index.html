@@ -19,8 +19,8 @@
           var p = location.pathname.indexOf('/en') === 0 ? 'en' : null
           var s = localStorage.getItem('lang')
           var b = (navigator.language || 'en').toLowerCase()
-          var l =
-            q === 'fr' || q === 'en' ? q : p ? p : s === 'fr' || s === 'en' ? s : b.indexOf('fr') === 0 ? 'fr' : 'en'
+          var ok = function (v) { return v === 'fr' || v === 'en' || v === 'nl' }
+          var l = ok(q) ? q : p ? p : ok(s) ? s : b.indexOf('fr') === 0 ? 'fr' : b.indexOf('nl') === 0 ? 'nl' : 'en'
           root.setAttribute('data-lang', l)
           root.setAttribute('lang', l)
           var qt = new URLSearchParams(location.search).get('theme')

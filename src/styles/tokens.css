@@ -98,9 +98,10 @@
   --desk-bg: #e2ddcd;
 }
 
-/* ─── bilingual switch (CSS-only, works pre-hydration) ─── */
-:root[data-lang='fr'] [data-l='en'] { display: none; }
-:root[data-lang='en'] [data-l='fr'] { display: none; }
+/* ─── trilingual switch (CSS-only, works pre-hydration) ─── */
+:root[data-lang='fr'] [data-l='en'], :root[data-lang='fr'] [data-l='nl'] { display: none; }
+:root[data-lang='en'] [data-l='fr'], :root[data-lang='en'] [data-l='nl'] { display: none; }
+:root[data-lang='nl'] [data-l='fr'], :root[data-lang='nl'] [data-l='en'] { display: none; }
 
 /* ─── base ─── */
 html { scroll-behavior: smooth; }
@@ -566,6 +567,7 @@ a.tl-date:hover { color: var(--accent); text-decoration: underline; text-underli
    never a hydration mismatch (aria-pressed is synced by React after mount) */
 :root[data-lang='fr'] .btn.lang-fr,
 :root[data-lang='en'] .btn.lang-en,
+:root[data-lang='nl'] .btn.lang-nl,
 :root:not([data-filter]) .btn.fb-all,
 :root[data-filter='b'] .btn.fb-b,
 :root[data-filter='i'] .btn.fb-i,

@@ -33,7 +33,7 @@ const SECTIONS = [
 const missing = SECTIONS.filter((id) => !html.includes(`id="${id}"`))
 check(`all ${SECTIONS.length} section anchors prerendered`, missing.length === 0, missing.join(','))
 
-check('both languages in the DOM', html.includes('data-l="fr"') && html.includes('data-l="en"'))
+check('all three languages in the DOM (nl falls back to EN when unported)', html.includes('data-l="fr"') && html.includes('data-l="en"') && html.includes('data-l="nl"') && html.includes('Onbestuurbaar'))
 check('fr page declares lang="fr" (prerenderer overwrite repaired)', html.includes('<html lang="fr" data-lang="fr">'))
 check('content actually prerendered (>200 KB)', html.length > 200_000, `${Math.round(html.length / 1024)} KB`)
 check('timeline events present', (html.match(/tl-item/g) ?? []).length >= 20, `${(html.match(/tl-item/g) ?? []).length}`)

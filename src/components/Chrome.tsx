@@ -10,7 +10,7 @@ export function TopBar() {
   return (
     <div className="topbar">
       <a className="brand" href="#top">
-        <span className="glyph">◆</span> <T fr="INGOUVERNABLE" en="UNGOVERNABLE" />
+        <span className="glyph">◆</span> <T fr="INGOUVERNABLE" en="UNGOVERNABLE" nl="ONBESTUURBAAR" />
       </a>
       <div className="controls">
         <button
@@ -28,6 +28,14 @@ export function TopBar() {
           onClick={() => setLang('en')}
         >
           <span className="flag">🇬🇧</span> EN
+        </button>
+        <button
+          type="button"
+          className="btn lang-nl"
+          aria-pressed={lang ? lang === 'nl' : undefined}
+          onClick={() => setLang('nl')}
+        >
+          <span className="flag">🇳🇱</span> NL
         </button>
         <button type="button" className="btn" onClick={toggleTheme} aria-label="Thème clair/sombre — Light/dark theme">
           ◐
