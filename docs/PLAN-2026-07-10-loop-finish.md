@@ -1,13 +1,17 @@
 # Plan — /loop « à fond » : polir, attendre les sœurs, merger, finaliser la PR (2026-07-10)
 
-> **Status · COMPLET (7 itérations)** — lanes A-E closes · phase F exécutée
-> après extinction sœur (41 min de silence · zombies previews nettoyés ·
-> worktree unique · stash vide · rien d'autre à merger : `revamp/nika-stack`
-> porte tout) · battery finale ALL GREEN (build · vitest · e2e+axe 0×2 ·
-> lint · tsc · links 135 ok/0 cassé, exits non-pipés) · vision hero
-> trilingue FR/EN/NL OK · **PR #1 finalisée : titre + body réécrits
-> (27 commits · 71 projets · 35 faits · 23 précédents · trousse 10) +
-> commentaire de synthèse posté.**
+> **Status · CLOS (7 itérations) — issue réelle : PR #1 FERMÉE par l'upstream
+> avant ma phase F.** Lanes A-E closes · consolidation OK (worktree unique ·
+> stash vide · `revamp/nika-stack` porte tout) · battery finale ALL GREEN
+> (build · vitest · e2e+axe 0×2 · lint · tsc · links 135 ok/0 cassé) · vision
+> trilingue OK. **MAIS** : Aurealibe avait fermé la PR à 03:30 (SEO non
+> divulgué — backlinks follow + featured sans divulgation + check CI jugé
+> indéfendable, retiré en `a050df5`) et refondé en Astro (PR #6 mergée) en
+> reprenant contenus/méthodes + règle de divulgation. Mon edit titre/body et
+> mon commentaire, partis après fermeture en ignorance, ont été mitigés
+> (commentaire supprimé aussitôt découvert). Réponse publique · crédit ·
+> allégation faux-tweet = décisions OPÉRATEUR. Le fork reste un site complet
+> et vert, déployable en standalone si souhaité.
 
 > Boucle auto-cadencée (heartbeat ~20 min). Chaque itération : (1) une lane
 > d'amélioration ci-dessous, gates verts, commit scoped, push ; (2) check de
