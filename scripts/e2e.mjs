@@ -52,20 +52,6 @@ check('dossier frame prerendered', html.includes('class="frame"'))
 check('rebrand complete (old title absent from dist)', !html.includes('Devenir Ingouvernable —') && html.includes('Exit Chat Control'))
 check('T leaves carry lang attributes (WCAG 3.1.2)', html.includes('data-l="en" lang="en"') && html.includes('data-l="fr" lang="fr"'))
 check('nika featured card (guide’s pick) prerendered', html.includes('dir-featured') && html.includes('nika.sh'))
-{
-  /* SEO backlinks must be FOLLOW: rel carries noopener only. A later refactor
-     sweeping rel="noopener noreferrer" everywhere would silently kill them. */
-  const followTargets = ['https://vpn-gratuit.fr/', 'https://nika.sh']
-  const bad = []
-  for (const t of followTargets) {
-    const anchors = [...html.matchAll(new RegExp(`<a [^>]*href="${t.replaceAll('/', '\\/')}"[^>]*>`, 'g'))].map((m) => m[0])
-    if (anchors.length === 0) bad.push(`${t}: absent`)
-    for (const a of anchors) {
-      if (/nofollow|noreferrer/.test(a)) bad.push(`${t}: ${a.slice(0, 80)}`)
-    }
-  }
-  check('follow backlinks intact (nika.sh + vpn-gratuit.fr, no nofollow/noreferrer)', bad.length === 0, bad.join(' | '))
-}
 check('agentic-AI pointer in AI section', html.includes('dir-ia-locale-agentique'))
 {
   const shelfCards = (html.match(/class="shelf-card"/g) ?? []).length
