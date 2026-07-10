@@ -73,6 +73,25 @@ describe('open-source directory', () => {
     expect(nika?.license).toBe('AGPL-3.0')
     expect(nika?.href).toBe('https://nika.sh')
   })
+
+  /* The one entry with a conflict of interest must name it, in both languages.
+     A disclosure nobody enforces is a disclosure that quietly rots away. */
+  it('nika carries an explicit affiliation disclosure naming SuperNovae', () => {
+    const nika = DIRECTORY.find((e) => e.name === 'Nika')
+    expect(nika?.fr, 'fr disclosure').toMatch(/Divulgation\s*:.*SuperNovae/)
+    expect(nika?.en, 'en disclosure').toMatch(/Disclosure\s*:.*SuperNovae/)
+  })
+
+  /* One link policy for every outbound link — no editorial link may be given
+     SEO-passing treatment the others don't get (the failure that closed PR #1). */
+  it('no directory entry points at a domain the guide has a stake in, beyond nika', () => {
+    const stakeDomains = ['vpn-gratuit.fr', 'supernovae.studio']
+    for (const e of DIRECTORY) {
+      for (const d of stakeDomains) {
+        expect(e.href.includes(d), `${e.name} → ${e.href}`).toBe(false)
+      }
+    }
+  })
 })
 
 describe('big brother observatory (drift)', () => {
