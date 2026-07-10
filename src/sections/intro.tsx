@@ -115,11 +115,15 @@ const TOC: { href: string; p: string; fr: string; en: string }[] = [
 
 export function Toc() {
   return (
-    <nav className="toc" aria-label="Sommaire — Contents">
-      <h2>
-        <T fr="Sommaire" en="Contents" />
-      </h2>
-      <ol>
+    <nav aria-label="Sommaire — Contents">
+      <details className="toc" open>
+        <summary>
+          <h2>
+            <T fr="Sommaire" en="Contents" />
+          </h2>
+          <span className="toc-chevron" aria-hidden="true">▾</span>
+        </summary>
+        <ol>
         {TOC.map((e) => (
           <li key={e.href}>
             <a href={e.href}>
@@ -128,7 +132,8 @@ export function Toc() {
             </a>
           </li>
         ))}
-      </ol>
+        </ol>
+      </details>
     </nav>
   )
 }

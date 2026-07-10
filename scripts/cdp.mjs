@@ -105,7 +105,23 @@ export async function withBrowser(fn, { timeoutMs = 90_000 } = {}) {
         return null
       }
       const close = () => send('Target.closeTarget', { targetId })
-      return { evaluate, waitFor, close }
+      /* true device emulation (headless --window-size floors at ~500px wide;
+         this doesn't) + full-page screenshot via CDP */
+      const emulate = ({ width, height, dsf = 2, mobile = true }) =>
+        send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: dsf, mobile }, sessionId)
+      const screenshot = async (path, { fullPage = false } = {}) => {
+        const { writeFileSync } = await import('node:fs')
+        const params = { format: 'png' }
+        if (fullPage) {
+          const m = await send('Page.getLayoutMetrics', {}, sessionId)
+          const h = Math.min(Math.ceil(m.cssContentSize?.height ?? m.contentSize.height), 8000)
+          params.clip = { x: 0, y: 0, width: Math.ceil(m.cssContentSize?.width ?? m.contentSize.width), height: h, scale: 1 }
+          params.captureBeyondViewport = true
+        }
+        const { data } = await send('Page.captureScreenshot', params, sessionId)
+        writeFileSync(path, Buffer.from(data, 'base64'))
+      }
+      return { evaluate, waitFor, close, emulate, screenshot }
     }
 
     return await fn({ openPage })

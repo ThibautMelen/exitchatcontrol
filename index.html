@@ -26,6 +26,13 @@
           var qt = new URLSearchParams(location.search).get('theme')
           var t = qt === 'dark' || qt === 'light' ? qt : localStorage.getItem('theme')
           if (t === 'dark' || t === 'light') root.setAttribute('data-theme', t)
+          /* fold the table of contents on small screens (26 rows = a full
+             mobile viewport); no-JS mobile keeps it open — acceptable */
+          if (matchMedia('(max-width: 767px)').matches)
+            document.addEventListener('DOMContentLoaded', function () {
+              var toc = document.querySelector('details.toc')
+              if (toc) toc.removeAttribute('open')
+            })
           var g = new URLSearchParams(location.search).get('goto')
           if (g)
             addEventListener('load', function () {
