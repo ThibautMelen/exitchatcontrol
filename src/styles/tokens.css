@@ -859,3 +859,32 @@ html { scrollbar-width: thin; scrollbar-color: var(--rule-strong) var(--desk-bg)
   .mq-legend { margin-top: 0.65rem; flex-wrap: wrap; gap: 0.5rem; }
   main { padding-block: 1rem clamp(2.5rem, 6vw, 4.5rem); }
 }
+
+/* ═══ a11y & fine ergonomics pass ════════════════════════════════════════════ */
+
+/* WCAG 2.5.8+ on touch: 44px interactive targets where fingers operate */
+@media (pointer: coarse) {
+  .btn, .tg-install > summary, .toc > summary, .share-btn, .tg-link, .mq-toggle { min-height: 44px; }
+  .btn, .mq-toggle { padding-block: 0.65rem; }
+  .tg-link { align-items: center; }
+}
+
+/* the desk respects notches/home indicators — every chrome element keys off
+   --desk, so one max() fixes frame, topbar, progress and to-top at once */
+@supports (padding: max(0px)) {
+  :root {
+    --desk: max(clamp(0.5rem, 1.4vw, 0.9rem), env(safe-area-inset-top), env(safe-area-inset-right), env(safe-area-inset-left));
+  }
+}
+
+/* shelf cards scroll under a mask that would eat an outline — use an inset
+   ring instead, and make sure the focused card is scrolled into view */
+.shelf-card:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--accent-bright);
+  border-color: var(--accent-bright);
+}
+.shelf { scroll-padding-inline: calc(clamp(1.1rem, 4vw, 2rem) + 1.6rem); }
+
+/* the details chevron of tool cards is also a target — acknowledge focus */
+.tg-install > summary:focus-visible { color: var(--accent); }

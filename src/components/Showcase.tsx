@@ -32,13 +32,13 @@ export function Showcase() {
   const [paused, setPaused] = useState(false)
 
   return (
-    <section className="showcase" id="trousse" data-paused={paused || undefined}>
+    <section className="showcase" id="trousse" aria-labelledby="trousse-title" data-paused={paused || undefined}>
       <div className="showcase-head wrap-wide">
         <div>
           <div className="eyebrow">
             <T fr="L'arsenal, d'abord" en="The arsenal, first" />
           </div>
-          <h2>
+          <h2 id="trousse-title">
             <T fr="La trousse de survie" en="The survival kit" />
           </h2>
           <p className="showcase-lede">

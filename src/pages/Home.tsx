@@ -18,7 +18,7 @@ import { Action } from '../sections/action'
 export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#menace">
+      <a className="skip-link" href="#trousse">
         <T fr="Aller au contenu" en="Skip to content" />
       </a>
       {/* the dossier frame: contour + desk, fused with the topbar (tokens.css) */}

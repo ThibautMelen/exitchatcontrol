@@ -72,6 +72,8 @@ check('agentic-AI pointer in AI section', html.includes('dir-ia-locale-agentique
   check('survival-kit shelf prerendered (10 hero cards)', shelfCards === 10, `${shelfCards}`)
   check('arsenal marquee + pause control prerendered', html.includes('mq-track') && html.includes('mq-toggle'))
   check('showcase in TOC', html.includes('#trousse'))
+check('skip-link targets first content', html.includes('class="skip-link" href="#trousse"'))
+check('showcase has an accessible name', html.includes('aria-labelledby="trousse-title"') && html.includes('id="trousse-title"'))
 }
 check('observatory events prerendered', (html.match(/bb-item/g) ?? []).length >= 30, `${(html.match(/bb-item/g) ?? []).length}`)
 check('observatory deep-linkable', html.includes('id="bb-going-dark"') && html.includes('id="bb-pega-kouloglou"'))
