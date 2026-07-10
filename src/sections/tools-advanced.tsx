@@ -383,7 +383,7 @@ export function SelfHost() {
     <section id="selfhost">
       <PartHead
         num={<>PARTIE 10 · <T fr="AUTODÉFENSE AVANCÉE" en="ADVANCED SELF-DEFENCE" /> · <Lvl n={3} /></>}
-        title={<T fr="Auto-hébergement" en="Self-hosting" />}
+        title={<T fr="Auto-hébergement" en="Self-hosting" nl="Zelfhosting" />}
         intro={
           <T
             fr="Le niveau ultime de souveraineté : héberger vos services vous-même. Vos données vivent sur votre matériel, sous la juridiction que vous choisissez."
@@ -437,7 +437,7 @@ export function FreeOs() {
     <section id="os">
       <PartHead
         num={<>PARTIE 12 · <Lvl n={3} /></>}
-        title={<T fr="Systèmes d'exploitation libres" en="Free operating systems" />}
+        title={<T fr="Systèmes d'exploitation libres" en="Free operating systems" nl="Vrije besturingssystemen" />}
         intro={
           <T
             fr="La pièce maîtresse. Si le scan côté client peut être imposé par le système d'exploitation lui-même, la seule vraie parade est de contrôler cet OS. C'est vrai sur le téléphone (GrapheneOS) comme sur l'ordinateur (Linux). Ne sous-estimez pas ce point : tant que vous restez sous Windows, macOS ou un Android Google, vous ne contrôlez pas vraiment votre machine."
@@ -466,7 +466,7 @@ export function Telephony() {
     <section id="telephonie">
       <PartHead
         num={<><T fr="MATÉRIEL" en="HARDWARE" /> · <Lvl n={3} /></>}
-        title={<T fr="Téléphonie & appareil physique" en="Telephony & physical device" />}
+        title={<T fr="Téléphonie & appareil physique" en="Telephony & physical device" nl="Telefonie & fysiek apparaat" />}
         intro={
           <T
             fr="La meilleure application ne sert à rien si l'appareil lui-même vous trahit. Voici les menaces matérielles et les gestes qui les neutralisent."
@@ -541,7 +541,7 @@ export function Opsec() {
     <section id="opsec">
       <PartHead
         num={<>PARTIE 13 · <Lvl n={3} /></>}
-        title={<T fr="Anonymat & OPSEC" en="Anonymity & OPSEC" />}
+        title={<T fr="Anonymat & OPSEC" en="Anonymity & OPSEC" nl="Anonimiteit & OPSEC" />}
         intro={
           <T
             fr={<>Pour le compte pseudonyme et le lanceur d'alerte. Ici, on ne protège plus seulement un message : on protège une <strong>identité</strong>.</>}

@@ -84,34 +84,34 @@ export function StatusBanner() {
   )
 }
 
-const TOC: { href: string; p: string; fr: string; en: string }[] = [
+const TOC: { href: string; p: string; fr: string; en: string; nl?: string }[] = [
   { href: '#trousse', p: '★', fr: 'La trousse de survie', en: 'The survival kit' },
-  { href: '#menace', p: '00', fr: 'Comprendre la menace', en: 'Understand the threat' },
+  { href: '#menace', p: '00', fr: 'Comprendre la menace', en: 'Understand the threat' , nl: 'Begrijp de dreiging' },
   { href: '#precedents', p: '⏱', fr: 'Les précédents (1993-2026)', en: 'The precedents (1993-2026)' },
   { href: '#bigbrother', p: '👁', fr: 'Big Brother, pièce par pièce', en: 'Big Brother, piece by piece' },
-  { href: '#memo', p: '★', fr: 'À supprimer / À adopter', en: 'Delete / Adopt' },
-  { href: '#messagerie', p: '01', fr: 'Messagerie chiffrée', en: 'Encrypted messaging' },
-  { href: '#email', p: '02', fr: 'E-mail chiffré & PGP', en: 'Encrypted email & PGP' },
-  { href: '#navigateur', p: '03', fr: 'Navigateur & recherche', en: 'Browser & search' },
-  { href: '#dns', p: '◦', fr: 'DNS chiffré & Cloudflare', en: 'Encrypted DNS & Cloudflare' },
-  { href: '#vpn', p: '04', fr: 'VPN : la vérité', en: 'VPN: the truth' },
-  { href: '#censure', p: '✋', fr: 'Censure & identité', en: 'Censorship & ID' },
-  { href: '#proton', p: '05', fr: 'Quitter Google (Proton)', en: 'Leave Google (Proton)' },
-  { href: '#stockage', p: '06', fr: 'Stockage chiffré', en: 'Encrypted storage' },
-  { href: '#motsdepasse', p: '07', fr: 'Mots de passe', en: 'Passwords' },
-  { href: '#deuxfa', p: '◦', fr: '2FA & clés matérielles', en: '2FA & hardware keys' },
-  { href: '#social', p: '08', fr: 'Réseaux décentralisés', en: 'Decentralised social' },
-  { href: '#argent', p: '09', fr: 'Souveraineté financière', en: 'Financial sovereignty' },
-  { href: '#ia', p: '⚠', fr: 'IA conversationnelle', en: 'Conversational AI' },
-  { href: '#boiteaoutils', p: '◦', fr: 'Boîte à outils quotidienne', en: 'Everyday toolbox' },
-  { href: '#selfhost', p: '10', fr: 'Auto-hébergement', en: 'Self-hosting' },
-  { href: '#tor', p: '11', fr: 'Tor', en: 'Tor' },
-  { href: '#os', p: '12', fr: 'OS libres & Linux', en: 'Free OS & Linux' },
-  { href: '#telephonie', p: '◦', fr: 'Téléphonie & appareil', en: 'Telephony & device' },
-  { href: '#opsec', p: '13', fr: 'Anonymat & OPSEC', en: 'Anonymity & OPSEC' },
+  { href: '#memo', p: '★', fr: 'À supprimer / À adopter', en: 'Delete / Adopt' , nl: 'Verwijderen / Overstappen' },
+  { href: '#messagerie', p: '01', fr: 'Messagerie chiffrée', en: 'Encrypted messaging' , nl: 'Versleutelde berichten' },
+  { href: '#email', p: '02', fr: 'E-mail chiffré & PGP', en: 'Encrypted email & PGP' , nl: 'Versleutelde e-mail & PGP' },
+  { href: '#navigateur', p: '03', fr: 'Navigateur & recherche', en: 'Browser & search' , nl: 'Browser & zoeken' },
+  { href: '#dns', p: '◦', fr: 'DNS chiffré & Cloudflare', en: 'Encrypted DNS & Cloudflare' , nl: 'Versleutelde DNS & Cloudflare' },
+  { href: '#vpn', p: '04', fr: 'VPN : la vérité', en: 'VPN: the truth' , nl: 'VPN: de waarheid' },
+  { href: '#censure', p: '✋', fr: 'Censure & identité', en: 'Censorship & ID' , nl: 'Censuur & identiteit' },
+  { href: '#proton', p: '05', fr: 'Quitter Google (Proton)', en: 'Leave Google (Proton)' , nl: 'Google verlaten (Proton)' },
+  { href: '#stockage', p: '06', fr: 'Stockage chiffré', en: 'Encrypted storage' , nl: 'Versleutelde opslag' },
+  { href: '#motsdepasse', p: '07', fr: 'Mots de passe', en: 'Passwords' , nl: 'Wachtwoorden' },
+  { href: '#deuxfa', p: '◦', fr: '2FA & clés matérielles', en: '2FA & hardware keys' , nl: '2FA & hardwaretokens' },
+  { href: '#social', p: '08', fr: 'Réseaux décentralisés', en: 'Decentralised social' , nl: 'Gedecentraliseerde netwerken' },
+  { href: '#argent', p: '09', fr: 'Souveraineté financière', en: 'Financial sovereignty' , nl: 'Financiële soevereiniteit' },
+  { href: '#ia', p: '⚠', fr: 'IA conversationnelle', en: 'Conversational AI' , nl: 'Conversationele AI' },
+  { href: '#boiteaoutils', p: '◦', fr: 'Boîte à outils quotidienne', en: 'Everyday toolbox' , nl: 'Dagelijkse gereedschapskist' },
+  { href: '#selfhost', p: '10', fr: 'Auto-hébergement', en: 'Self-hosting' , nl: 'Zelfhosting' },
+  { href: '#tor', p: '11', fr: 'Tor', en: 'Tor' , nl: 'Tor' },
+  { href: '#os', p: '12', fr: 'OS libres & Linux', en: 'Free OS & Linux' , nl: 'Vrije besturingssystemen & Linux' },
+  { href: '#telephonie', p: '◦', fr: 'Téléphonie & appareil', en: 'Telephony & device' , nl: 'Telefonie & apparaat' },
+  { href: '#opsec', p: '13', fr: 'Anonymat & OPSEC', en: 'Anonymity & OPSEC' , nl: 'Anonimiteit & OPSEC' },
   { href: '#ecosysteme', p: '14', fr: 'Annuaire open source', en: 'Open-source directory' },
   { href: '#allies', p: '🤝', fr: 'Les initiatives alliées', en: 'Allied initiatives' },
-  { href: '#action', p: '15', fr: "Passer à l'action", en: 'Take action' },
+  { href: '#action', p: '15', fr: "Passer à l'action", en: 'Take action' , nl: 'In actie komen' },
 ]
 
 export function Toc() {
@@ -129,7 +129,7 @@ export function Toc() {
           <li key={e.href}>
             <a href={e.href}>
               <span className="p">{e.p}</span>
-              <T fr={e.fr} en={e.en} />
+              <T fr={e.fr} en={e.en} nl={e.nl} />
             </a>
           </li>
         ))}
@@ -144,7 +144,7 @@ export function Threat() {
     <section id="menace">
       <PartHead
         num={<>PARTIE 00 · <T fr="LE POURQUOI" en="THE WHY" /></>}
-        title={<T fr="Comprendre la menace" en="Understand the threat" />}
+        title={<T fr="Comprendre la menace" en="Understand the threat" nl="Begrijp de dreiging" />}
         intro={
           <T
             fr="Avant de changer d'outils, il faut comprendre ce contre quoi on se protège. Sinon, on installe des applications au hasard et on se croit protégé alors qu'on ne l'est pas."
@@ -315,7 +315,7 @@ export function Memo() {
     <section id="memo">
       <PartHead
         num={<>MÉMO · <T fr="LE GRAND REMPLACEMENT NUMÉRIQUE" en="THE DIGITAL SWAP" /></>}
-        title={<T fr="À supprimer / À adopter" en="Delete / Adopt" />}
+        title={<T fr="À supprimer / À adopter" en="Delete / Adopt" nl="Verwijderen / Overstappen" />}
         intro={
           <T
             fr="La vue d'ensemble en un coup d'œil. Le détail de chaque outil suit dans les sections numérotées."

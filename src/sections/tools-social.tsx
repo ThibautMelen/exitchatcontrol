@@ -548,7 +548,7 @@ export function Social() {
     <section id="social">
       <PartHead
         num={<>PARTIE 08 · <Lvl n={2} /></>}
-        title={<T fr="Réseaux sociaux décentralisés" en="Decentralised social" />}
+        title={<T fr="Réseaux sociaux décentralisés" en="Decentralised social" nl="Gedecentraliseerde sociale netwerken" />}
         intro={
           <T
             fr="Instagram, X et Facebook appartiennent à des entreprises qui vous profilent et peuvent vous censurer ou vous supprimer du jour au lendemain. Le « fédiverse » propose des réseaux appartenant à leurs utilisateurs."
@@ -576,7 +576,7 @@ export function Money() {
     <section id="argent">
       <PartHead
         num={<>PARTIE 09 · <Lvl n={2} /></>}
-        title={<T fr="Souveraineté financière" en="Financial sovereignty" />}
+        title={<T fr="Souveraineté financière" en="Financial sovereignty" nl="Financiële soevereiniteit" />}
         intro={
           <T
             fr="L'argent aussi est surveillé et censurable. Des comptes de militants ont été gelés, des dons bloqués, chaque paiement par carte est tracé. La vie privée financière fait partie de la souveraineté."
@@ -604,7 +604,7 @@ export function Ai() {
     <section id="ia">
       <PartHead
         num={<>ANGLE MORT · <T fr="LA FOLIE DE L'IA" en="THE AI MADNESS" /> · <Lvl n={2} /></>}
-        title={<T fr="L'IA conversationnelle" en="Conversational AI" />}
+        title={<T fr="L'IA conversationnelle" en="Conversational AI" nl="Conversationele AI" />}
         intro={
           <T
             fr="Pendant qu'on se bat pour chiffrer nos messages, des centaines de millions de gens confient leurs pensées les plus intimes à ChatGPT, Gemini ou Copilot, sur des serveurs américains. C'est l'angle mort de toute cette histoire. Une pure folie."
@@ -657,7 +657,7 @@ export function Toolbox() {
     <section id="boiteaoutils">
       <PartHead
         num={<><T fr="REMPLACER LE RESTE" en="REPLACE THE REST" /> · <Lvl n={2} /></>}
-        title={<T fr="La boîte à outils du quotidien" en="The everyday toolbox" />}
+        title={<T fr="La boîte à outils du quotidien" en="The everyday toolbox" nl="De dagelijkse gereedschapskist" />}
         intro={
           <T
             fr="Google et Apple ne sont pas que des e-mails : cartes, notes, agenda, photos, visio, tout est relié à votre identité. Voici de quoi remplacer chaque brique, une par une, sans rien perdre en confort."

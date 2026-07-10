@@ -690,7 +690,7 @@ export function Messaging() {
     <section id="messagerie">
       <PartHead
         num={<>PARTIE 01 · <T fr="LES FONDATIONS" en="FOUNDATIONS" /> · <Lvl n={1} /></>}
-        title={<T fr="Messagerie chiffrée" en="Encrypted messaging" />}
+        title={<T fr="Messagerie chiffrée" en="Encrypted messaging" nl="Versleutelde berichten" />}
         intro={
           <T
             fr="Le premier geste, celui qui protège le plus vite : quitter WhatsApp, Messenger et Telegram pour une messagerie réellement chiffrée et, idéalement, libre."
@@ -746,7 +746,7 @@ export function Email() {
     <section id="email">
       <PartHead
         num={<>PARTIE 02 · <Lvl n={1} /></>}
-        title={<T fr="E-mail chiffré & PGP" en="Encrypted email & PGP" />}
+        title={<T fr="E-mail chiffré & PGP" en="Encrypted email & PGP" nl="Versleutelde e-mail & PGP" />}
         intro={
           <T
             fr="Gmail lit vos e-mails et vit aux États-Unis, sous la juridiction des « Five Eyes ». Quitter Gmail/Outlook est un gain énorme pour un effort minime."
@@ -775,7 +775,7 @@ export function Browsers() {
     <section id="navigateur">
       <PartHead
         num={<>PARTIE 03 · <Lvl n={1} /></>}
-        title={<T fr="Navigateur & recherche" en="Browser & search" />}
+        title={<T fr="Navigateur & recherche" en="Browser & search" nl="Browser & zoeken" />}
         intro={
           <T
             fr="Chrome est un mouchard publicitaire. Google Search profile chaque requête. On remplace les deux."
@@ -795,7 +795,7 @@ export function Dns() {
     <section id="dns">
       <PartHead
         num={<>RÉSEAU · DNS · <Lvl n={2} /></>}
-        title={<T fr="DNS chiffré & Cloudflare" en="Encrypted DNS & Cloudflare" />}
+        title={<T fr="DNS chiffré & Cloudflare" en="Encrypted DNS & Cloudflare" nl="Versleutelde DNS & Cloudflare" />}
         intro={
           <T
             fr={<>Le DNS, c'est l'annuaire qui traduit un nom de site (exemple.com) en adresse machine. Problème : par défaut, c'est votre fournisseur d'accès qui gère cet annuaire, et il voit donc <strong>chaque site que vous visitez</strong>, même quand la page est en HTTPS. Chiffrer son DNS, c'est reprendre cette liste à son FAI. C'est un réglage discret mais parmi les plus efficaces.</>}

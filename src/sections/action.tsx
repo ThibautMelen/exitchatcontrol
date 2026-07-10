@@ -28,7 +28,7 @@ export function Action() {
     <section id="action">
       <PartHead
         num={<>PARTIE 15 · <T fr="PASSER À L'ACTION" en="TAKE ACTION" /></>}
-        title={<T fr="Migration & désobéissance civile numérique" en="Migration & digital civil disobedience" />}
+        title={<T fr="Migration & désobéissance civile numérique" en="Migration & digital civil disobedience" nl="Migratie & digitale burgerlijke ongehoorzaamheid" />}
       />
       <h4><T fr="Le plan, à cocher" en="The plan, tickable" /></h4>
       <p>

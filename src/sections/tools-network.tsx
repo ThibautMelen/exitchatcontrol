@@ -415,7 +415,7 @@ export function Vpn() {
     <section id="vpn">
       <PartHead
         num={<>PARTIE 04 · <Lvl n={1} /></>}
-        title={<T fr="VPN : la vérité" en="VPN: the truth" />}
+        title={<T fr="VPN : la vérité" en="VPN: the truth" nl="VPN: de waarheid" />}
         intro={
           <T
             fr="Un VPN est utile, mais vendu avec beaucoup de mensonges. Voici ce qu'il protège vraiment."
@@ -459,7 +459,7 @@ export function Censorship() {
     <section id="censure">
       <PartHead
         num={<>CENSURE · <T fr="IDENTITÉ NUMÉRIQUE" en="DIGITAL IDENTITY" /> · <Lvl n={2} /></>}
-        title={<T fr="Censure & vérification d'identité" en="Censorship & identity checks" />}
+        title={<T fr="Censure & vérification d'identité" en="Censorship & identity checks" nl="Censuur & identiteitscontroles" />}
         intro={
           <T
             fr="Le même prétexte (« protéger les mineurs ») sert à imposer la vérification d'identité pour accéder à Internet. C'est la fin programmée de l'anonymat en ligne, donc une forme de censure. Voici l'état des lieux, puis comment y échapper légalement."
@@ -538,7 +538,7 @@ export function LeaveGoogle() {
     <section id="proton">
       <PartHead
         num={<>PARTIE 05 · <T fr="REPRENDRE LE CONTRÔLE" en="TAKE BACK CONTROL" /> · <Lvl n={2} /></>}
-        title={<T fr="Quitter Google" en="Leave Google" />}
+        title={<T fr="Quitter Google" en="Leave Google" nl="Google verlaten" />}
         intro={
           <T
             fr="Google, c'est un compte unique qui connaît vos e-mails, votre agenda, vos fichiers, vos déplacements et vos recherches. On remplace la suite entière."
@@ -577,7 +577,7 @@ export function LeaveGoogle() {
 export function Storage() {
   return (
     <section id="stockage">
-      <PartHead num={<>PARTIE 06 · <Lvl n={2} /></>} title={<T fr="Stockage chiffré" en="Encrypted storage" />} />
+      <PartHead num={<>PARTIE 06 · <Lvl n={2} /></>} title={<T fr="Stockage chiffré" en="Encrypted storage" nl="Versleutelde opslag" />} />
       {STORAGE.map((t) => (
         <ToolCard key={t.id} {...t} />
       ))}
@@ -590,7 +590,7 @@ export function Passwords() {
     <section id="motsdepasse">
       <PartHead
         num={<>PARTIE 07 · <Lvl n={2} /></>}
-        title={<T fr="Gestionnaire de mots de passe" en="Password manager" />}
+        title={<T fr="Gestionnaire de mots de passe" en="Password manager" nl="Wachtwoordmanager" />}
         intro={
           <T
             fr="Un mot de passe unique et fort par service : c'est la base de toute la sécurité qui suit. Arrêtez le carnet, arrêtez le même mot de passe partout."
@@ -610,7 +610,7 @@ export function TwoFa() {
     <section id="deuxfa">
       <PartHead
         num={<>SÉCURITÉ · 2FA · <Lvl n={2} /></>}
-        title={<T fr="Double authentification & clés matérielles" en="Two-factor auth & hardware keys" />}
+        title={<T fr="Double authentification & clés matérielles" en="Two-factor auth & hardware keys" nl="Tweestapsverificatie & hardwaretokens" />}
         intro={
           <T
             fr="Un mot de passe, même fort, peut fuiter. La double authentification (2FA) ajoute une seconde preuve à la connexion : même si votre mot de passe est volé, le compte reste fermé. C'est indispensable sur vos comptes sensibles (e-mail, gestionnaire de mots de passe, réseaux)."
